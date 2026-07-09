@@ -6,16 +6,16 @@
   --card: #fffdf7;
   --ink: #38332a;
   --soft-ink: #6e675a;
-  --burgundy: #7b2d26;
-  --olive: #5f684c;
+  --burgundy: #334057;
+  --olive: #5a6690;
   --line: #ddd3bf;
   --rule: #c8bda3;
   /* Breakout box accents */
-  --box-framework: #7b2d26;   /* burgundy */
-  --box-field: #5f684c;       /* olive */
+  --box-framework: #334057;   /* navy */
+  --box-field: #55803a;       /* grow green */
   --box-grab: #96731f;        /* warm gold */
-  --box-firstmove: #45607a;   /* slate blue */
-  --box-watchout: #9c4a1c;    /* rust */
+  --box-firstmove: #5a6690;   /* periwinkle */
+  --box-watchout: #b3242e;    /* brand red, deepened */
   --box-polity: #5d4a66;      /* muted plum */
   --box-cohort: #3d6b66;      /* deep teal */
 }
