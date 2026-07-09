@@ -1,0 +1,297 @@
+/* The Pastor's Handbook: house stylesheet.
+   Matches the Church Resource Hub palette and typography. */
+
+:root {
+  --paper: #f9f5ec;
+  --card: #fffdf7;
+  --ink: #38332a;
+  --soft-ink: #6e675a;
+  --burgundy: #7b2d26;
+  --olive: #5f684c;
+  --line: #ddd3bf;
+  --rule: #c8bda3;
+  /* Breakout box accents */
+  --box-framework: #7b2d26;   /* burgundy */
+  --box-field: #5f684c;       /* olive */
+  --box-grab: #96731f;        /* warm gold */
+  --box-firstmove: #45607a;   /* slate blue */
+  --box-watchout: #9c4a1c;    /* rust */
+  --box-polity: #5d4a66;      /* muted plum */
+  --box-cohort: #3d6b66;      /* deep teal */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+a { color: var(--burgundy); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--olive); }
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+/* ---------- Cover / index ---------- */
+
+.cover {
+  text-align: center;
+  padding: 64px 24px 40px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: normal;
+  margin: 16px 0 10px;
+}
+.cover .rule {
+  width: 80px;
+  margin: 18px auto;
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+.cover p.subtitle {
+  font-size: 1.1rem;
+  color: var(--soft-ink);
+  font-style: italic;
+}
+.cover p.blurb {
+  margin-top: 22px;
+  color: var(--soft-ink);
+  font-size: 0.98rem;
+  text-align: left;
+}
+
+.toc {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 10px 24px 80px;
+}
+.toc .part {
+  margin-top: 40px;
+}
+.toc .part h2 {
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.toc .part .part-rule {
+  width: 46px;
+  margin: 8px 0 14px;
+  border: none;
+  border-top: 2px solid var(--burgundy);
+}
+.toc ol {
+  list-style: none;
+  counter-reset: none;
+}
+.toc li {
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--line);
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.toc li .num {
+  color: var(--soft-ink);
+  font-size: 0.85rem;
+  min-width: 1.6em;
+  text-align: right;
+}
+.toc li.coming { color: var(--soft-ink); }
+.toc li.coming .status {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--soft-ink);
+  white-space: nowrap;
+}
+
+/* ---------- Chapter layout ---------- */
+
+.book-bar {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  padding: 12px 24px;
+  text-align: center;
+}
+.book-bar a {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  text-decoration: none;
+}
+.book-bar a:hover { color: var(--olive); }
+
+.chapter {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+.chapter header.ch-head { text-align: center; margin-bottom: 36px; }
+.chapter header.ch-head .eyebrow { margin-bottom: 12px; }
+.chapter header.ch-head h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+.chapter header.ch-head .rule {
+  width: 80px;
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+.chapter p { margin-bottom: 1.1em; }
+.chapter h2 {
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin: 2em 0 0.7em;
+}
+.chapter h3 {
+  font-weight: normal;
+  font-size: 1.12rem;
+  color: var(--burgundy);
+  margin: 1.6em 0 0.5em;
+}
+.chapter img.figure {
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+.chapter figcaption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--soft-ink);
+  text-align: center;
+  margin-top: 8px;
+}
+.chapter figure { margin: 1.4em 0; }
+
+/* Numbered steps */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 1.2em 0 1.4em;
+}
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 1.1em 52px;
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--burgundy);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps > li strong.step-title { display: block; }
+
+/* ---------- Breakout boxes ---------- */
+
+.box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--soft-ink);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 1.6em 0;
+  font-size: 0.95rem;
+}
+.box p { margin-bottom: 0.8em; }
+.box p:last-child { margin-bottom: 0; }
+.box .box-label {
+  font-size: 0.74rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.box .box-icon { font-size: 1rem; }
+
+.box.framework  { border-left-color: var(--box-framework); }
+.box.framework  .box-label { color: var(--box-framework); }
+.box.field      { border-left-color: var(--box-field); }
+.box.field      .box-label { color: var(--box-field); }
+.box.grab       { border-left-color: var(--box-grab); }
+.box.grab       .box-label { color: var(--box-grab); }
+.box.firstmove  { border-left-color: var(--box-firstmove); }
+.box.firstmove  .box-label { color: var(--box-firstmove); }
+.box.watchout   { border-left-color: var(--box-watchout); }
+.box.watchout   .box-label { color: var(--box-watchout); }
+.box.polity     { border-left-color: var(--box-polity); }
+.box.polity     .box-label { color: var(--box-polity); }
+.box.cohort     { border-left-color: var(--box-cohort); }
+.box.cohort     .box-label { color: var(--box-cohort); }
+
+/* ---------- Next step + tools ---------- */
+
+.next-step {
+  border-top: 2px solid var(--burgundy);
+  margin-top: 3em;
+  padding-top: 1.2em;
+}
+.next-step .eyebrow { display: block; margin-bottom: 10px; }
+
+.tools {
+  margin-top: 2.4em;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.tools .eyebrow { display: block; margin-bottom: 12px; color: var(--olive); }
+.tools ul { list-style: none; }
+.tools li { padding: 6px 0; border-bottom: 1px dotted var(--line); }
+.tools li:last-child { border-bottom: none; }
+.tools li .tool-desc { color: var(--soft-ink); font-size: 0.88rem; }
+
+/* ---------- Chapter nav footer ---------- */
+
+.ch-nav {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.92rem;
+}
+.ch-nav .coming { color: var(--soft-ink); font-style: italic; }
+
+footer.colophon {
+  border-top: 1px solid var(--line);
+  color: var(--soft-ink);
+  padding: 30px 24px 44px;
+  text-align: center;
+  font-size: 0.88rem;
+}
+footer.colophon p { max-width: 620px; margin: 0 auto 8px; }
+
+@media (max-width: 600px) {
+  .chapter { padding: 36px 16px 60px; }
+  .steps > li { padding-left: 44px; }
+}
