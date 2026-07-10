@@ -6,4 +6,6 @@ The book is the map; the hub is the toolbox.
 
 Read it at **https://churchresourcehub.github.io/pastorhandbook/**
 
+A print edition (PDF, 180 pages) is built from the same chapters and linked from the cover page.
+
 Built at Spanish Fort United Methodist Church on the Alabama Gulf Coast, and shared with the whole church.

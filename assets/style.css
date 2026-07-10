@@ -69,6 +69,11 @@ a:hover { color: var(--olive); }
   font-size: 0.98rem;
   text-align: left;
 }
+.cover p.pdf-line {
+  margin-top: 26px;
+  font-size: 0.9rem;
+  color: var(--soft-ink);
+}
 
 .toc {
   max-width: 680px;
